@@ -3,5 +3,6 @@ export default function capitalize(str) {
     throw new Error("The value must be a string");
   }
 
-  return str.slice(0, 1).toUpperCase() + str.slice(1);
+  str = str.trim();
+  return str.charAt(0).toUpperCase() + str.slice(1);
 }
