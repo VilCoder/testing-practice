@@ -16,9 +16,9 @@ export default function caesarCipher(text, shift) {
   if (typeof text !== "string" || typeof shift !== "number") {
     throw new Error("Verify that the values are correct");
   }
+
   // Normalize shift to avoid problems with values greater than 26 or negative
   const realShift = ((shift % 26) + 26) % 26;
 
   return [...text].map(char => shiftChar(char, realShift)).join('');
 }
-
